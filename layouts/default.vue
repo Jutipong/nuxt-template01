@@ -16,14 +16,8 @@
                 <v-list-item-title>{{ item.text }}</v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item
-              v-for="(child, i) in item.children"
-              :key="i"
-              link
-              :to="child.to"
-              child.index="rootindex"
-            >
-              <v-list-item-action v-if="child.icon">
+            <v-list-item v-for="(child, i) in item.children" :key="i" link :to="child.to">
+              <v-list-item-action v-if="child.icon" class="ml-2">
                 <v-icon>{{ child.icon }}</v-icon>
               </v-list-item-action>
               <v-list-item-content>
@@ -31,6 +25,7 @@
               </v-list-item-content>
             </v-list-item>
           </v-list-group>
+
           <v-list-item v-else :key="item.text" link :to="item.to">
             <v-list-item-action>
               <v-icon>{{ item.icon }}</v-icon>
@@ -78,7 +73,7 @@ export default {
           children: [
             {
               index_root: 2,
-              icon: 'mdi-plus',
+              icon: 'mdi-account',
               text: 'user',
               to: 'user',
               index: null,
@@ -94,7 +89,7 @@ export default {
           children: [
             {
               index_root: 3,
-              icon: 'mdi-plus',
+              icon: 'mdi-vuejs',
               text: 'Inspire',
               to: 'inspire',
             },

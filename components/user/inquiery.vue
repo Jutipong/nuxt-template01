@@ -1,5 +1,5 @@
 <template>
-  <v-card class="pa-2" elevation="5">
+  <v-card class="mt-4 mb-4 pa-2" elevation="5">
     <v-form>
       <v-card-title class="pa-2">
         <v-icon large left> mdi-file-find </v-icon>
