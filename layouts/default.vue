@@ -129,7 +129,6 @@ export default {
   },
   mounted() {
     this.items.forEach((r) => {
-      console.log('1')
       if (r.children != null) {
         let obj = r.children.find((c) => {
           return c.to.toUpperCase() == $nuxt.$route.name.toUpperCase()

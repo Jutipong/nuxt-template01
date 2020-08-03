@@ -50,6 +50,12 @@ export default {
       this.$store.commit(`setValue${index}`, count)
     },
   },
+  beforeDestroy: function () {
+    this.$nuxt.$store.commit('setValue1', 0)
+    this.$nuxt.$store.commit('setValue2', 0)
+    this.$nuxt.$store.commit('setValue3', 0)
+    this.$nuxt.$store.commit('setValue4', 0)
+  },
 }
 </script>
 
