@@ -1,6 +1,12 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app>
+    <v-navigation-drawer
+      v-model="drawer"
+      :mini-variant="miniVariant"
+      :clipped="clipped"
+      fixed
+      app
+    >
       <v-list shaped dense>
         <template v-for="item in items">
           <v-row v-if="item.heading" :key="item.heading" align="center"></v-row>
@@ -16,7 +22,12 @@
                 <v-list-item-title>{{ item.text }}</v-list-item-title>
               </v-list-item-content>
             </template>
-            <v-list-item v-for="(child, i) in item.children" :key="i" link :to="child.to">
+            <v-list-item
+              v-for="(child, i) in item.children"
+              :key="i"
+              link
+              :to="child.to"
+            >
               <v-list-item-action v-if="child.icon" class="ml-2">
                 <v-icon>{{ child.icon }}</v-icon>
               </v-list-item-action>
@@ -38,7 +49,15 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar small :clipped-left="clipped" fixed app color="blue darken-3" dark dense>
+    <v-app-bar
+      small
+      :clipped-left="clipped"
+      fixed
+      app
+      color="blue darken-3"
+      dark
+      dense
+    >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-spacer />
     </v-app-bar>
@@ -54,7 +73,6 @@
     </v-footer>
   </v-app>
 </template>
-
 <script>
 export default {
   data() {
@@ -63,19 +81,26 @@ export default {
       drawer: true,
       fixed: false,
       items: [
-        { index: 1, icon: 'mdi-content-copy', text: 'Welcome', to: '/' },
+        // { index: 1, icon: 'mdi-content-copy', text: 'Welcome', to: '/' },
         {
           index: 2,
           icon: 'mdi-chevron-up',
           'icon-alt': 'mdi-chevron-down',
-          text: 'UserGroup',
+          text: 'Demo',
           model: false,
           children: [
             {
               index_root: 2,
               icon: 'mdi-account',
-              text: 'user',
+              text: 'Form',
               to: 'user',
+              index: null,
+            },
+            {
+              index_root: 2,
+              icon: 'mdi-waves',
+              text: 'Demo VueX',
+              to: 'DemoVuex',
               index: null,
             },
           ],

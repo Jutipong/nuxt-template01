@@ -2,7 +2,7 @@
   <v-card class="mt-4 mb-4 pa-2" elevation="5">
     <v-form>
       <v-card-title class="pa-2">
-        <v-icon large left> mdi-file-find </v-icon>
+        <v-icon large left>mdi-file-find</v-icon>
         <span class="title font-weight-light">Search</span>
       </v-card-title>
       <v-divider></v-divider>
@@ -29,22 +29,15 @@
           </v-col>
 
           <v-col cols="12" md="4">
-            <v-text-field
-              v-model="user.email"
-              :rules="user.emailRules"
-              label="E-mail"
-              required
-            ></v-text-field>
+            <v-text-field v-model="user.email" :rules="user.emailRules" label="E-mail" required></v-text-field>
           </v-col>
         </v-row>
       </v-card-text>
       <v-card-actions class="text-center">
         <v-spacer></v-spacer>
-        <v-btn min-width="120px" class="btn-d text-capitalize" color="error">
-          Reset form
-        </v-btn>
+        <v-btn min-width="120px" class="btn-d text-capitalize" color="error">Reset form</v-btn>
         <v-btn min-width="120px" class="btn-d text-capitalize" color="primary">
-          Search
+          <v-icon>mdi-account-plus-outline</v-icon> Search
         </v-btn>
       </v-card-actions>
     </v-form>
