@@ -4,29 +4,26 @@
       <v-list shaped dense>
         <template v-for="item in items">
           <v-row v-if="item.heading" :key="item.heading" align="center"></v-row>
-          <v-list-group
-            v-else-if="item.children"
-            v-model="item.model"
-            :key="item.text"
-            :prepend-icon="item.model ? item.icon : item['icon-alt']"
-            append-icon
-          >
+          <v-list-group v-else-if="item.children" v-model="item.model" :key="item.text" :prepend-icon="item.model ? item.icon : item['icon-alt']" append-icon>
+            <!-- Title -->
             <template v-slot:activator>
               <v-list-item-content>
                 <v-list-item-title>{{ item.text }}</v-list-item-title>
               </v-list-item-content>
             </template>
-
-            <v-list-item v-for="(child, i) in item.children" :key="i" link :to="child.to">
-              <v-list-item-action v-if="child.icon" class="ml-2">
+            <!-- Title Sub -->
+            <v-list-item v-for="(child, i) in item.children" :key="i" link :to="child.to" class="v-list-item">
+              <!-- <v-list-item-action v-if="child.icon" class="ml-4">
                 <v-icon>{{ child.icon }}</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>{{ child.text }}</v-list-item-title>
+              </v-list-item-action> -->
+              <v-list-item-content class="ml-4">
+                <v-list-item-title>
+                  <v-icon class="pr-2">{{ child.icon }}</v-icon> {{ child.text }}</v-list-item-title
+                >
               </v-list-item-content>
             </v-list-item>
           </v-list-group>
-
+          <!-- Root menu -->
           <v-list-item v-else :key="item.text" link :to="item.to">
             <v-list-item-action>
               <v-icon>{{ item.icon }}</v-icon>
@@ -63,7 +60,7 @@ export default {
       drawer: true,
       fixed: false,
       items: [
-        // { index: 1, icon: 'mdi-content-copy', text: 'Welcome', to: '/' },
+        // { index: 1, icon: 'mdi-home', text: 'Home', to: '/' },
         {
           index: 2,
           icon: 'mdi-chevron-up',
@@ -91,7 +88,7 @@ export default {
           index: 3,
           icon: 'mdi-chevron-up',
           'icon-alt': 'mdi-chevron-down',
-          text: 'UserGroup1',
+          text: 'Group 1',
           model: false,
           children: [
             {
