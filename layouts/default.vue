@@ -32,13 +32,15 @@
               <v-list-item-title>{{ item.text }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+          <v-divider dark class="my-4"></v-divider>
         </template>
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar small :clipped-left="clipped" fixed app color="blue darken-3" dark dense>
+    <v-app-bar small :clipped-left="clipped" fixed app color="primary" dark dense>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-spacer />
+      <v-btn outlined color="primary" dark>text</v-btn>
     </v-app-bar>
 
     <v-content>
@@ -62,12 +64,40 @@ export default {
       items: [
         // { index: 1, icon: 'mdi-home', text: 'Home', to: '/' },
         {
+          index: 3,
+          icon: 'mdi-chevron-up',
+          'icon-alt': 'mdi-chevron-down',
+          text: 'Home',
+          model: false,
+          children: [
+            {
+              index_root: 3,
+              icon: 'mdi-home',
+              text: 'Home',
+              to: '/',
+            },
+            {
+              index_root: 3,
+              icon: 'mdi-vuejs',
+              text: 'Inspire',
+              to: 'inspire',
+            },
+          ],
+        },
+        {
           index: 2,
           icon: 'mdi-chevron-up',
           'icon-alt': 'mdi-chevron-down',
           text: 'Demo',
           model: false,
           children: [
+            {
+              index_root: 2,
+              icon: 'mdi-pencil',
+              text: 'CRUD',
+              to: 'CRUD',
+              index: null,
+            },
             {
               index_root: 2,
               icon: 'mdi-account',
@@ -81,21 +111,6 @@ export default {
               text: 'Demo VueX',
               to: 'DemoVuex',
               index: null,
-            },
-          ],
-        },
-        {
-          index: 3,
-          icon: 'mdi-chevron-up',
-          'icon-alt': 'mdi-chevron-down',
-          text: 'Group 1',
-          model: false,
-          children: [
-            {
-              index_root: 3,
-              icon: 'mdi-vuejs',
-              text: 'Inspire',
-              to: 'inspire',
             },
           ],
         },
@@ -129,7 +144,7 @@ export default {
 </script>
 
 <style>
-.btn-d {
-  min-width: 120px;
+.btn-f {
+  width: 120px;
 }
 </style>

@@ -9,23 +9,11 @@
       <v-card-text>
         <v-row>
           <v-col cols="12" md="4">
-            <v-text-field
-              v-model="user.firstname"
-              :rules="user.nameRules"
-              :counter="10"
-              label="First name"
-              required
-            ></v-text-field>
+            <v-text-field v-model="user.firstname" :rules="user.nameRules" :counter="10" label="First name" required></v-text-field>
           </v-col>
 
           <v-col cols="12" md="4">
-            <v-text-field
-              v-model="user.lastname"
-              :rules="user.nameRules"
-              :counter="10"
-              label="Last name"
-              required
-            ></v-text-field>
+            <v-text-field v-model="user.lastname" :rules="user.nameRules" :counter="10" label="Last name" required></v-text-field>
           </v-col>
 
           <v-col cols="12" md="4">
@@ -36,9 +24,7 @@
       <v-card-actions class="text-center">
         <v-spacer></v-spacer>
         <v-btn min-width="120px" class="btn-d text-capitalize" color="error">Reset form</v-btn>
-        <v-btn min-width="120px" class="btn-d text-capitalize" color="primary">
-          <v-icon>mdi-account-plus-outline</v-icon> Search
-        </v-btn>
+        <v-btn min-width="120px" class="btn-d text-capitalize" color="primary"> <v-icon>mdi-account-plus-outline</v-icon> Search </v-btn>
       </v-card-actions>
     </v-form>
   </v-card>
@@ -52,17 +38,11 @@ export default {
         valid: false,
         firstname: '',
         lastname: '',
-        nameRules: [
-          (v) => !!v || 'Name is required',
-          (v) => v.length <= 10 || 'Name must be less than 10 characters',
-        ],
+        nameRules: [(v) => !!v || 'Name is required', (v) => v.length <= 10 || 'Name must be less than 10 characters'],
         email: '',
-        emailRules: [
-          (v) => !!v || 'E-mail is required',
-          (v) => /.+@.+/.test(v) || 'E-mail must be valid',
-        ],
+        emailRules: [(v) => !!v || 'E-mail is required', (v) => /.+@.+/.test(v) || 'E-mail must be valid'],
       },
-    }
+    };
   },
-}
+};
 </script>
