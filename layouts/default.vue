@@ -1,6 +1,25 @@
 <template>
   <v-app dark>
     <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app>
+      <!-- <div class="container">
+        <div class="text-center">
+          <div class="v-responsive mb-3" style="height: 57px;">
+            <div class="v-responsive__content">
+              <div large="" class="row ma-0 supporter-group row--dense align-center justify-center">
+                <div class="d-flex shrink justify-center col-sm-auto col-6">
+                  <a tabindex="0" href="https://www.qomplx.com/" target="_blank" class="pa-1 v-card v-card--flat v-card--link v-sheet theme--light rounded-0 transparent" aria-label="Supporter QOMPLX" rel="noopener">
+                    <div aria-label="QOMPLX" role="img" class="v-image v-responsive flex-shrink-1 theme--light" style="max-height: 78px; width: 155px;">
+                      <div class="v-responsive__sizer" style="padding-bottom: 26.2346%;"></div>
+                      <div class="v-image__image v-image__image--contain" style="background-image: url('/TCR_Logo.png'); background-position: center center;"></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
       <v-list shaped dense>
         <template v-for="item in items">
           <v-row v-if="item.heading" :key="item.heading" align="center"></v-row>
@@ -32,7 +51,7 @@
               <v-list-item-title>{{ item.text }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-divider dark class="my-4"></v-divider>
+          <!-- <v-divider dark class="my-4"></v-divider> -->
         </template>
       </v-list>
     </v-navigation-drawer>
